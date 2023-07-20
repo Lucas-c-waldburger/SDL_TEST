@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8F053CC42A38B48D00BEDC34 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F053CC32A38B48D00BEDC34 /* main.cpp */; };
+		8F053CCC2A38B4D300BEDC34 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F053CCB2A38B4D300BEDC34 /* SDL2.framework */; };
+		8F053CD82A39E8EF00BEDC34 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F053CD72A39E8EF00BEDC34 /* SDL2_image.framework */; };
+		8F309D182A3B5C9100E717B3 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F309D172A3B5C9100E717B3 /* SDL2_ttf.framework */; };
+		8F38B9132A696BA600AA733A /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F38B9112A696BA600AA733A /* Bullet.cpp */; };
+		8F38B9162A698B3400AA733A /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F38B9142A698B3400AA733A /* Time.cpp */; };
+		8F3F87432A583EA2002C4A1F /* sdl2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F87412A583EA2002C4A1F /* sdl2.cpp */; };
+		8F3F874C2A584097002C4A1F /* CircleDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F874A2A584097002C4A1F /* CircleDraw.cpp */; };
+		8F3F874F2A5840A7002C4A1F /* CInscribedTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F874D2A5840A7002C4A1F /* CInscribedTriangle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +33,23 @@
 /* Begin PBXFileReference section */
 		8F053CC02A38B48D00BEDC34 /* SDL_TEST */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDL_TEST; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F053CC32A38B48D00BEDC34 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8F053CCB2A38B4D300BEDC34 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		8F053CD72A39E8EF00BEDC34 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		8F309D172A3B5C9100E717B3 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		8F38B9112A696BA600AA733A /* Bullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		8F38B9122A696BA600AA733A /* Bullet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
+		8F38B9142A698B3400AA733A /* Time.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
+		8F38B9152A698B3400AA733A /* Time.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Time.hpp; sourceTree = "<group>"; };
+		8F3F87412A583EA2002C4A1F /* sdl2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sdl2.cpp; sourceTree = "<group>"; };
+		8F3F87422A583EA2002C4A1F /* sdl2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sdl2.hpp; sourceTree = "<group>"; };
+		8F3F87442A583F98002C4A1F /* LineDraw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LineDraw.cpp; sourceTree = "<group>"; };
+		8F3F87452A583F98002C4A1F /* LineDraw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LineDraw.hpp; sourceTree = "<group>"; };
+		8F3F87482A583FFE002C4A1F /* Utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Utils.hpp; sourceTree = "<group>"; };
+		8F3F874A2A584097002C4A1F /* CircleDraw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CircleDraw.cpp; sourceTree = "<group>"; };
+		8F3F874B2A584097002C4A1F /* CircleDraw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CircleDraw.hpp; sourceTree = "<group>"; };
+		8F3F874D2A5840A7002C4A1F /* CInscribedTriangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CInscribedTriangle.cpp; sourceTree = "<group>"; };
+		8F3F874E2A5840A7002C4A1F /* CInscribedTriangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CInscribedTriangle.hpp; sourceTree = "<group>"; };
+		8F3F87512A5840B8002C4A1F /* Flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Flags.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F309D182A3B5C9100E717B3 /* SDL2_ttf.framework in Frameworks */,
+				8F053CD82A39E8EF00BEDC34 /* SDL2_image.framework in Frameworks */,
+				8F053CCC2A38B4D300BEDC34 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +71,7 @@
 			children = (
 				8F053CC22A38B48D00BEDC34 /* SDL_TEST */,
 				8F053CC12A38B48D00BEDC34 /* Products */,
+				8F053CCA2A38B4D300BEDC34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +87,32 @@
 			isa = PBXGroup;
 			children = (
 				8F053CC32A38B48D00BEDC34 /* main.cpp */,
+				8F3F87412A583EA2002C4A1F /* sdl2.cpp */,
+				8F3F87422A583EA2002C4A1F /* sdl2.hpp */,
+				8F3F87442A583F98002C4A1F /* LineDraw.cpp */,
+				8F3F87452A583F98002C4A1F /* LineDraw.hpp */,
+				8F3F87482A583FFE002C4A1F /* Utils.hpp */,
+				8F3F874A2A584097002C4A1F /* CircleDraw.cpp */,
+				8F3F874B2A584097002C4A1F /* CircleDraw.hpp */,
+				8F3F874D2A5840A7002C4A1F /* CInscribedTriangle.cpp */,
+				8F3F874E2A5840A7002C4A1F /* CInscribedTriangle.hpp */,
+				8F3F87512A5840B8002C4A1F /* Flags.hpp */,
+				8F38B9112A696BA600AA733A /* Bullet.cpp */,
+				8F38B9122A696BA600AA733A /* Bullet.hpp */,
+				8F38B9142A698B3400AA733A /* Time.cpp */,
+				8F38B9152A698B3400AA733A /* Time.hpp */,
 			);
 			path = SDL_TEST;
+			sourceTree = "<group>";
+		};
+		8F053CCA2A38B4D300BEDC34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F309D172A3B5C9100E717B3 /* SDL2_ttf.framework */,
+				8F053CD72A39E8EF00BEDC34 /* SDL2_image.framework */,
+				8F053CCB2A38B4D300BEDC34 /* SDL2.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F38B9162A698B3400AA733A /* Time.cpp in Sources */,
+				8F38B9132A696BA600AA733A /* Bullet.cpp in Sources */,
+				8F3F87432A583EA2002C4A1F /* sdl2.cpp in Sources */,
 				8F053CC42A38B48D00BEDC34 /* main.cpp in Sources */,
+				8F3F874C2A584097002C4A1F /* CircleDraw.cpp in Sources */,
+				8F3F874F2A5840A7002C4A1F /* CInscribedTriangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +297,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,6 +311,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
