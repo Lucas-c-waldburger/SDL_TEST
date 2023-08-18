@@ -10,12 +10,19 @@
 		8F053CC42A38B48D00BEDC34 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F053CC32A38B48D00BEDC34 /* main.cpp */; };
 		8F053CCC2A38B4D300BEDC34 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F053CCB2A38B4D300BEDC34 /* SDL2.framework */; };
 		8F053CD82A39E8EF00BEDC34 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F053CD72A39E8EF00BEDC34 /* SDL2_image.framework */; };
+		8F1070602A77E98F00A2543A /* VelocityTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F10705E2A77E98F00A2543A /* VelocityTime.cpp */; };
+		8F25C9182A7810C8007D8B5F /* ScoreBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F25C9162A7810C8007D8B5F /* ScoreBox.cpp */; };
 		8F309D182A3B5C9100E717B3 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F309D172A3B5C9100E717B3 /* SDL2_ttf.framework */; };
 		8F38B9132A696BA600AA733A /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F38B9112A696BA600AA733A /* Bullet.cpp */; };
 		8F38B9162A698B3400AA733A /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F38B9142A698B3400AA733A /* Time.cpp */; };
 		8F3F87432A583EA2002C4A1F /* sdl2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F87412A583EA2002C4A1F /* sdl2.cpp */; };
 		8F3F874C2A584097002C4A1F /* CircleDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F874A2A584097002C4A1F /* CircleDraw.cpp */; };
 		8F3F874F2A5840A7002C4A1F /* CInscribedTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F3F874D2A5840A7002C4A1F /* CInscribedTriangle.cpp */; };
+		8F68FB8B2A6AB681000F9DA2 /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F68FB892A6AB681000F9DA2 /* Ship.cpp */; };
+		8F68FB8E2A6ABB15000F9DA2 /* Asteroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F68FB8C2A6ABB15000F9DA2 /* Asteroid.cpp */; };
+		8F96CE592A714FB500F61EA1 /* TempObjectLifetimeManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F96CE572A714FB500F61EA1 /* TempObjectLifetimeManager.cpp */; };
+		8F96CE5C2A715D6D00F61EA1 /* PathPoints.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F96CE5A2A715D6D00F61EA1 /* PathPoints.cpp */; };
+		8FC591F52A6EA64A00667439 /* CInscribedShape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FC591F32A6EA64A00667439 /* CInscribedShape.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +42,10 @@
 		8F053CC32A38B48D00BEDC34 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8F053CCB2A38B4D300BEDC34 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		8F053CD72A39E8EF00BEDC34 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		8F10705E2A77E98F00A2543A /* VelocityTime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VelocityTime.cpp; sourceTree = "<group>"; };
+		8F10705F2A77E98F00A2543A /* VelocityTime.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VelocityTime.hpp; sourceTree = "<group>"; };
+		8F25C9162A7810C8007D8B5F /* ScoreBox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreBox.cpp; sourceTree = "<group>"; };
+		8F25C9172A7810C8007D8B5F /* ScoreBox.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ScoreBox.hpp; sourceTree = "<group>"; };
 		8F309D172A3B5C9100E717B3 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
 		8F38B9112A696BA600AA733A /* Bullet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		8F38B9122A696BA600AA733A /* Bullet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
@@ -50,6 +61,16 @@
 		8F3F874D2A5840A7002C4A1F /* CInscribedTriangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CInscribedTriangle.cpp; sourceTree = "<group>"; };
 		8F3F874E2A5840A7002C4A1F /* CInscribedTriangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CInscribedTriangle.hpp; sourceTree = "<group>"; };
 		8F3F87512A5840B8002C4A1F /* Flags.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Flags.hpp; sourceTree = "<group>"; };
+		8F68FB892A6AB681000F9DA2 /* Ship.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ship.cpp; sourceTree = "<group>"; };
+		8F68FB8A2A6AB681000F9DA2 /* Ship.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ship.hpp; sourceTree = "<group>"; };
+		8F68FB8C2A6ABB15000F9DA2 /* Asteroid.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Asteroid.cpp; sourceTree = "<group>"; };
+		8F68FB8D2A6ABB15000F9DA2 /* Asteroid.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Asteroid.hpp; sourceTree = "<group>"; };
+		8F96CE572A714FB500F61EA1 /* TempObjectLifetimeManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TempObjectLifetimeManager.cpp; sourceTree = "<group>"; };
+		8F96CE582A714FB500F61EA1 /* TempObjectLifetimeManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TempObjectLifetimeManager.hpp; sourceTree = "<group>"; };
+		8F96CE5A2A715D6D00F61EA1 /* PathPoints.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PathPoints.cpp; sourceTree = "<group>"; };
+		8F96CE5B2A715D6D00F61EA1 /* PathPoints.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PathPoints.hpp; sourceTree = "<group>"; };
+		8FC591F32A6EA64A00667439 /* CInscribedShape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CInscribedShape.cpp; sourceTree = "<group>"; };
+		8FC591F42A6EA64A00667439 /* CInscribedShape.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CInscribedShape.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +122,20 @@
 				8F38B9122A696BA600AA733A /* Bullet.hpp */,
 				8F38B9142A698B3400AA733A /* Time.cpp */,
 				8F38B9152A698B3400AA733A /* Time.hpp */,
+				8F68FB892A6AB681000F9DA2 /* Ship.cpp */,
+				8F68FB8A2A6AB681000F9DA2 /* Ship.hpp */,
+				8F68FB8C2A6ABB15000F9DA2 /* Asteroid.cpp */,
+				8F68FB8D2A6ABB15000F9DA2 /* Asteroid.hpp */,
+				8FC591F32A6EA64A00667439 /* CInscribedShape.cpp */,
+				8FC591F42A6EA64A00667439 /* CInscribedShape.hpp */,
+				8F96CE572A714FB500F61EA1 /* TempObjectLifetimeManager.cpp */,
+				8F96CE582A714FB500F61EA1 /* TempObjectLifetimeManager.hpp */,
+				8F96CE5A2A715D6D00F61EA1 /* PathPoints.cpp */,
+				8F96CE5B2A715D6D00F61EA1 /* PathPoints.hpp */,
+				8F10705E2A77E98F00A2543A /* VelocityTime.cpp */,
+				8F10705F2A77E98F00A2543A /* VelocityTime.hpp */,
+				8F25C9162A7810C8007D8B5F /* ScoreBox.cpp */,
+				8F25C9172A7810C8007D8B5F /* ScoreBox.hpp */,
 			);
 			path = SDL_TEST;
 			sourceTree = "<group>";
@@ -172,12 +207,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F68FB8E2A6ABB15000F9DA2 /* Asteroid.cpp in Sources */,
+				8F96CE592A714FB500F61EA1 /* TempObjectLifetimeManager.cpp in Sources */,
 				8F38B9162A698B3400AA733A /* Time.cpp in Sources */,
 				8F38B9132A696BA600AA733A /* Bullet.cpp in Sources */,
 				8F3F87432A583EA2002C4A1F /* sdl2.cpp in Sources */,
 				8F053CC42A38B48D00BEDC34 /* main.cpp in Sources */,
 				8F3F874C2A584097002C4A1F /* CircleDraw.cpp in Sources */,
+				8F1070602A77E98F00A2543A /* VelocityTime.cpp in Sources */,
 				8F3F874F2A5840A7002C4A1F /* CInscribedTriangle.cpp in Sources */,
+				8F25C9182A7810C8007D8B5F /* ScoreBox.cpp in Sources */,
+				8FC591F52A6EA64A00667439 /* CInscribedShape.cpp in Sources */,
+				8F68FB8B2A6AB681000F9DA2 /* Ship.cpp in Sources */,
+				8F96CE5C2A715D6D00F61EA1 /* PathPoints.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

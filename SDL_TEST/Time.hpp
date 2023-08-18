@@ -13,6 +13,7 @@ struct Time
     
     void setWait(int msToWait);
     bool waitOver();
+    
 };
 
 

@@ -2,7 +2,12 @@
 #include "CInscribedTriangle.hpp"
 
 
-CInscribedTriangle::CInscribedTriangle(SDL_Renderer* renderer, int r, LDPoint c) : CircleDraw(renderer, r, c), facingNewDirection(false), currentForwardPathIndex(1), bulletGenerator(BulletGenerator{ rendererCpy })
+CInscribedTriangle::CInscribedTriangle(SDL_Renderer* renderer, int r, LDPoint c) : CircleDraw(renderer, r, c), currentForwardPathIndex(1)
+{
+    init();
+}
+
+void CInscribedTriangle::init()
 {
     sortPerimeterPoints();
     recenter();
@@ -12,8 +17,7 @@ CInscribedTriangle::CInscribedTriangle(SDL_Renderer* renderer, int r, LDPoint c)
     updateTranglePoints();
 
     generateForwardPathPoints();
-
-}
+} 
 
 void CInscribedTriangle::draw()
 {
@@ -38,28 +42,14 @@ void CInscribedTriangle::rotate(int amount)
 
         tpi = projected;
     }
-
-    facingNewDirection = true;
-    generateForwardPathPoints();
+//
+//    generateForwardPathPoints();
 }
 
 
 void CInscribedTriangle::goForward()
 {
-    //if (facingNewDirection)
-    //{
-    //    generateForwardPathPoints();
-    //    facingNewDirection = false;
-    //}
-
-    LDPoint head = perimeterPoints[trianglePointIndexes[0]];
-
-    //std::cout << "HEAD: " << head << "\nFORWARD PATH POINTS:\n";
-    //for (auto& p : forwardPathPoints)
-    //    std::cout << '\t' << p << '\n';
-    //if (head == forwardPathPoints.back())
-    //    return;
-
+    LDPoint head = getHead();
     LDPoint nextPoint = forwardPathPoints[currentForwardPathIndex];
 
     if (pointWithinBounds(head))
@@ -67,10 +57,6 @@ void CInscribedTriangle::goForward()
         move(nextPoint - center);
         ++currentForwardPathIndex;
     }
-}
-
-void CInscribedTriangle::shoot()
-{
 }
 
 
@@ -117,7 +103,7 @@ void CInscribedTriangle::generateForwardPathPoints()
     forwardPathPoints.clear();
 
     int i = 0;
-    LDPoint head = perimeterPoints[trianglePointIndexes[0]];
+    LDPoint head = getHead();
     LDPoint projectedPoint = extendLinePoint(center, head, i);
 
     while (pointWithinBounds(projectedPoint))
@@ -129,6 +115,12 @@ void CInscribedTriangle::generateForwardPathPoints()
 
     currentForwardPathIndex = 1;
 }
+
+LDPoint CInscribedTriangle::getHead()
+{
+    return perimeterPoints[trianglePointIndexes[0]];
+}
+
 
 LDPoint CInscribedTriangle::extendLinePoint(LDPoint& A, LDPoint& B, int distance)
 {
@@ -144,16 +136,22 @@ LDPoint CInscribedTriangle::extendLinePoint(LDPoint& A, LDPoint& B, int distance
 
 std::vector<LDPoint> CInscribedTriangle::clipForwardPathFromHead() // returns copy of forward path points from the first point that is at/past the head of triangle
 {
-    LDPoint head = perimeterPoints[trianglePointIndexes[0]];
+    LDPoint head = getHead();
     
     auto closestPointToHead = [&head](LDPoint& p)
     {
         return ((head.x >= p.x - 2 && head.x <= p.x + 2) && (head.y >= p.y - 2 && head.y <= p.y + 2));
     };
     
-    auto clippedPath = std::find_if(forwardPathPoints.begin(), forwardPathPoints.end(), closestPointToHead);
+    auto closestPointToScreenEdge = [&](LDPoint& p)
+    {
+        return !LinePoints::pointWithinScreenBounds(p + 2) || !LinePoints::pointWithinScreenBounds(p - 2);
+    };
     
-    return std::vector<LDPoint>(clippedPath, forwardPathPoints.end());
+    auto clippedFromHead = std::find_if(forwardPathPoints.begin(), forwardPathPoints.end(), closestPointToHead);
+    auto clippedAtEdge = std::find_if(clippedFromHead, forwardPathPoints.end(), closestPointToScreenEdge);
+    
+    return std::vector<LDPoint>(clippedFromHead, clippedAtEdge);
 }
     
 bool CInscribedTriangle::pointWithinBounds(LDPoint& p)
@@ -170,16 +168,8 @@ void CInscribedTriangle::handleKeyStates(const Uint8*& keystates)
 
     else if (keystates[SDL_SCANCODE_D])
         rotate(-2);
-
-    if (keystates[SDL_SCANCODE_W])
-        goForward();
-
-    if (keystates[SDL_SCANCODE_SPACE])
-    {
-        if (bulletGenerator.time.waitOver())
-            bulletGenerator.makeBullet(clipForwardPathFromHead());
-    }
 }
+
 
 void CInscribedTriangle::updateTranglePoints()
 {

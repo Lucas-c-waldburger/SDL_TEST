@@ -3,10 +3,24 @@
 #include <string>
 #include "Flags.hpp"
 #include "sdl2.hpp"
-#include "CInscribedTriangle.hpp"
+#include "Ship.hpp"
+#include "Asteroid.hpp"
+#include "TempObjectLifetimeManager.hpp"
+#include "ScoreBox.hpp"
+
+
+
+// TODO
+    
+    // make another velocityTime object in ship to handle rotational velocity
+
+    // SCORE
+    // maybe add reference to it inside objectDestructionManager?
+    // add 10's place display for score
+        // function to seperate score into 10s and 1s place
+    // increase asteroid speed with score increase
 
 GameFlags flags;
-MousePosLog mousePos;
 
 int main(int argc, char* argv[])
 {
@@ -16,11 +30,11 @@ int main(int argc, char* argv[])
         sdl2::Window window("main", SCREEN_WIDTH, SCREEN_HEIGHT);
         sdl2::Renderer renderer(window);
 
-        /*LineDraw lineDraw{ renderer };*/
-        //CircleDraw circle{ renderer, 50, LDPoint{ 200, 200 } };
-        CInscribedTriangle circle{ renderer, 50, LDPoint{ 200, 200 } };
-
-
+        Ship ship{ renderer, 38, LDPoint{ 200, 200 } };
+        AsteroidGenerator asteroidGenerator(renderer);
+        ObjectDestructionManager objectDestructionManager;
+        ScoreDisplay::ScoreBoard scoreBoard(renderer);
+        
         SDL_Event e;
         while (!flags.isSet(quit))
         {
@@ -30,38 +44,31 @@ int main(int argc, char* argv[])
                 {
                     flags.setFlag(quit);
                 }
-
+            }
+            
+            objectDestructionManager.resolveAll(ship, asteroidGenerator);
+            if (ship.markedDestroy)
+            {
+                flags.setFlag(quit);
             }
 
-            const Uint8* keyStates = SDL_GetKeyboardState(nullptr);
-            circle.handleKeyStates(keyStates);
-
-
-            renderer.clear();
-
-            //if (lineDraw.points.size() > 0)
-            //    lineDraw.show();
-
-            //if (lineDraw.lines.size() > 0)
-            //    lineDraw.draw();
-            
-
-            circle.draw();
-
-
-            circle.bulletGenerator.drawAll();
-
-            //mousePos.update();
-            //if (circle.isInsidePerimeter(mousePos.current))
-            //    circle.drawFill(SDL_Color{0, 255, 0});
-
-            //else
-            //    circle.drawFill(SDL_Color{ 255, 0, 0 });
-
-            
-
-            renderer.present();
-
+            else
+            {
+                scoreBoard.setTotalScore(asteroidGenerator.getNumDestroyed());
+                
+                const Uint8* keyStates = SDL_GetKeyboardState(nullptr);
+                ship.handleKeyStates(keyStates);
+                
+                renderer.clear();
+                
+                ship.draw();
+                ship.bulletGenerator.drawAll();
+                asteroidGenerator.drawAll();
+                scoreBoard.draw();
+                
+                
+                renderer.present();
+            }
         }
     }
 

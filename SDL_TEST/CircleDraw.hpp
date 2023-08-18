@@ -20,18 +20,18 @@ public:
     std::vector<LDPoint> perimeterPoints;
 
 
-    void move(LDPoint amount);
-    void recenter();
+    virtual void move(LDPoint newP);
+    virtual void recenter();
     void resize(int newRadius);
 
-    void draw();
-    void drawFill(SDL_Color col);
+    virtual void draw();
+    virtual void drawFill(SDL_Color col);
 
     int decideNext(int prevDecisionP, LDPoint prevPoint);
     void reflectAndStore(LDPoint p);
     void findPerimeterPoints();
 
-    bool isInsidePerimeter(LDPoint testPoint);
+    virtual bool isInsidePerimeter(LDPoint testPoint);
 
 
     void logPerimeterPoints();

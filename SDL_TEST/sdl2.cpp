@@ -56,7 +56,7 @@ sdl2::Renderer::~Renderer()
 
 void sdl2::Renderer::clear()
 {
-    SDL_SetRenderDrawColor(pRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_SetRenderDrawColor(pRenderer, 0, 0, 0, 0xFF);
     SDL_RenderClear(pRenderer);
 }
 

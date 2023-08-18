@@ -11,37 +11,30 @@ const int PIXELS_MOVE_PER_FRAME = 3, ROTATION_RATE = 2;
 class CInscribedTriangle : public CircleDraw
 {
 public:
-
     CInscribedTriangle(SDL_Renderer* renderer, int r, LDPoint c);
 
-    BulletGenerator bulletGenerator;
-
-    void draw();
-    void rotate(int amount);
-    void goForward();
-    void shoot();
-
+    virtual void init();
+    virtual void draw();
+    virtual void rotate(int amount);
+    virtual void goForward();
 
     void sortPerimeterPoints();
     void assignTrianglePointIndexes();
-    void generateForwardPathPoints();
+    virtual void generateForwardPathPoints();
+    
+    LDPoint getHead();
 
-    // MOVE THESE TWO FUNCS TO UTILS
     LDPoint extendLinePoint(LDPoint& A, LDPoint& B, int distance);
     std::vector<LDPoint> clipForwardPathFromHead();
     
     bool pointWithinBounds(LDPoint& p);
 
-    void handleKeyStates(const Uint8*& keystates);
+    virtual void handleKeyStates(const Uint8*& keystates);
 
-private:
+protected:
     LDPoint trianglePoints[4];
     std::vector<int> trianglePointIndexes;
     std::vector<LDPoint> forwardPathPoints;
-
-    
-
-    bool facingNewDirection;
     int currentForwardPathIndex;
 
     void updateTranglePoints();
